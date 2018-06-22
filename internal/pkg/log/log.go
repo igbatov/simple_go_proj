@@ -4,6 +4,10 @@ type Logger struct {
 	buf    []byte     // for accumulating text to write
 }
 
+func (l Logger) Log() {
+
+}
+
 var someVar int
 
 func init() {
@@ -12,4 +16,9 @@ func init() {
 
 func GetSomeVar() int {
 	return someVar
+}
+
+func New() Logger {
+	buf := make([]byte, 3)
+	return Logger{buf: buf}
 }
